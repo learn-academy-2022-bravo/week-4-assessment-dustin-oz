@@ -13,16 +13,53 @@
 
 // --------------------1) Create a function that takes in an array, removes the first item from the array and shuffles the remaining content.
 
-// a) Create a test with an expect statement using the variable provided. HINT: Check out this resource: https://jestjs.io/docs/expect#expectarraycontainingarray
+// a) Create a test with an expect statement using the variable provided.HINT: Check out this resource: https://jestjs.io/docs/expect#expectarraycontainingarray
 
-const colors1 = ["purple", "blue", "green", "yellow", "pink"]
+describe('arrayShuffler', () => {
+    const colors1 = ["purple", "blue", "green", "yellow", "pink"]
+    const colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
+    it('takes in an array, removes the first item from the array and shuffles the remaining content.', () => {
+        expect(arrayShuffler(colors1)).toEqual(expect.arrayContaining(["yellow", "blue", "pink", "green"]));
+        expect(arrayShuffler(colors2)).toEqual(expect.arrayContaining(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]));
+    })
+})
+
 // Expected output example (can be a different order): ["yellow", "blue", "pink", "green"]
-const colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
 // Expected output example (can be a different order): ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
+
+        // FAIL./ code - challenges.test.js
+        // arrayShuffler
+        //     ✕ takes in an array, removes the first item from the array and shuffles the remaining content.
+
+        //   ● arrayShuffler › takes in an array, removes the first item from the array and shuffles the remaining content.
+
+        //     ReferenceError: arrayShuffler is not defined
+
 
 
 // b) Create the function that makes the test pass.
 
+// --> Pseudo Code <--
+// Create function called arrayShuffler
+// Takes in array
+// First .shift to remove 1st item in array
+// Iterate the rest of array and randomize with math.floor & random
+// Return the array at the end
+
+const arrayShuffler = (array) => {
+    array.shift()
+    for (i = 0; i < array.length; i++) {
+        let randomize = Math.floor(Math.random() * array.length)
+        let newArray = array[i]
+        array[i] = array[randomize]
+        array[randomize] = newArray
+    }
+    return array
+}
+
+        // PASS./ code - challenges.test.js
+        // arrayShuffler
+        //     ✓ takes in an array, removes the first item from the array and shuffles the remaining content. (1 ms)
 
 // --------------------2) Create a function that takes an array of numbers and returns an array of the minimum and maximum numbers in that order.
 
