@@ -60,9 +60,30 @@ p vowel_snatcher(album3)
 
 # -------------------3) Create a method that takes in a string and checks if the string is a palindrome. A palindrome is the same word spelled forward or backward. Use the test variables provided.
 
+# --> PSEUDO CODE <--
+# Create method called "palindrome_seeker" - takes in "string"
+# use .reverse to see if "string" is == to itself in reverse
+
 palindrome_tester1 = 'Racecar'
 # Expected output: 'Racecar is a palindrome'
 palindrome_tester2 = 'LEARN'
 # Expected output: 'LEARN is not a palindrome'
 palindrome_tester3 = 'Rotator'
 # Expected output: 'Rotator is a palindrome'
+
+def palindrome_seeker (string)
+    if string == string.reverse.capitalize 
+        "#{string} is a palindrome."
+    else
+         "#{string} is not a palindrome."
+    end
+end
+
+p palindrome_seeker (palindrome_tester1)
+p palindrome_seeker (palindrome_tester2)
+p palindrome_seeker (palindrome_tester3)
+
+# --> OUTPUT <--
+# "Racecar is a palindrome."
+# "LEARN is not a palindrome."
+# "Rotator is a palindrome."
