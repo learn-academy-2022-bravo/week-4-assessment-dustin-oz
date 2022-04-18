@@ -3,6 +3,11 @@
 
 # --------------------1) Create a method that takes in a number and determines if the number is even or odd. Use the test variables provided.
 
+# --> PSEUDO CODE <--
+# --> DEF method called "evenOddFinder" 
+# --> Method takes in paramater called "number"
+# --> if "number" % 2 == 0 = even Otherwise odd
+
 num1 = 7
 # Expected output: '7 is odd'
 num2 = 42
@@ -10,6 +15,22 @@ num2 = 42
 num3 = 221
 # Expected output: '221 is odd'
 
+def evenOddFinder number
+    if number %2 == 0 
+     "#{number} is even"
+    elsif number %2 == 1
+        "#{number} is odd"
+    end 
+end 
+
+p evenOddFinder (num1)
+p evenOddFinder (num2)
+p evenOddFinder (num3)
+
+# --> OUTPUT <--
+# "7 is odd"
+# "42 is even"
+# "221 is odd"
 
 
 # -------------------2) Create a method that takes in a string and removes all the vowels from the string. Use the test variables provided. HINT: Check out this resource: https://ruby-doc.org/core-2.6/String.html#method-i-delete
