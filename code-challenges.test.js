@@ -15,14 +15,14 @@
 
 // a) Create a test with an expect statement using the variable provided.HINT: Check out this resource: https://jestjs.io/docs/expect#expectarraycontainingarray
 
-// describe('arrayShuffler', () => {
-//     const colors1 = ["purple", "blue", "green", "yellow", "pink"]
-//     const colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
-//     it('takes in an array, removes the first item from the array and shuffles the remaining content.', () => {
-//         expect(arrayShuffler(colors1)).toEqual(expect.arrayContaining(["yellow", "blue", "pink", "green"]));
-//         expect(arrayShuffler(colors2)).toEqual(expect.arrayContaining(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]));
-//     })
-// })
+describe('arrayShuffler', () => {
+    const colors1 = ["purple", "blue", "green", "yellow", "pink"]
+    const colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
+    it('takes in an array, removes the first item from the array and shuffles the remaining content.', () => {
+        expect(arrayShuffler(colors1)).toEqual(expect.arrayContaining(["yellow", "blue", "pink", "green"]));
+        expect(arrayShuffler(colors2)).toEqual(expect.arrayContaining(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]));
+    })
+})
 
 // Expected output example (can be a different order): ["yellow", "blue", "pink", "green"]
 // Expected output example (can be a different order): ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
@@ -109,9 +109,36 @@ const minMax = (array) => {
 
 // a) Create a test with an expect statement using the variables provided.
 
-const testArray1 = [3, 7, 10, 5, 4, 3, 3]
-const testArray2 = [7, 8, 2, 3, 1, 5, 4]
+describe('noDupsArray', () => {
+    const testArray1 = [3, 7, 10, 5, 4, 3, 3]
+    const testArray2 = [7, 8, 2, 3, 1, 5, 4]
+    it('takes in two arrays as arguments and returns one array with no duplicate values.', () => {
+        expect(noDupsArray(testArray1, testArray2)).toEqual(expect.arrayContaining([3, 7, 10, 5, 4, 8, 2, 1]));
+    })
+})
+
+        // FAIL./ code - challenges.test.js
+        // noDupsArray
+        //     ✕ takes in two arrays as arguments and returns one array with no duplicate values.
+
+        //   ● noDupsArray › takes in two arrays as arguments and returns one array with no duplicate values.
+
+        //     ReferenceError: noDupsArray is not defined
+
 // Expected output: [3, 7, 10, 5, 4, 8, 2, 1]
 
 
 // b) Create the function that makes the test pass.
+
+// --> Pseudo Code <--
+// Create function called noDupsArray
+// Function takes in two arrays
+// return a new array using javascript ... on both arrays
+
+const noDupsArray = (array1, array2) => {
+    return [...new Set([...array1, ...array2])]
+}
+
+        // PASS./ code - challenges.test.js
+        // noDupsArray
+        //     ✓ takes in two arrays as arguments and returns one array with no duplicate values. (1 ms)
