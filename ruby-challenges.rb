@@ -35,6 +35,10 @@ p evenOddFinder (num3)
 
 # -------------------2) Create a method that takes in a string and removes all the vowels from the string. Use the test variables provided. HINT: Check out this resource: https://ruby-doc.org/core-2.6/String.html#method-i-delete
 
+# --> PSEUDO CODE <--
+# Create method called vowel_snatcher - takes in "string"
+# use .delete to remove particular string letters
+
 album1 = 'Rubber Soul'
 # Expected output: 'Rbbr Sl'
 album2 = 'Sgt Pepper'
@@ -42,7 +46,17 @@ album2 = 'Sgt Pepper'
 album3 = 'Abbey Road'
 # Expected output: 'bby Rd'
 
+def vowel_snatcher (string)
+    string.delete('aeiouAEIOU')
+end 
+p vowel_snatcher(album1)
+p vowel_snatcher(album2)
+p vowel_snatcher(album3)
 
+# --> OUTPUT <--
+# "Rbbr Sl"
+# "Sgt Pppr"
+# "bby Rd"
 
 # -------------------3) Create a method that takes in a string and checks if the string is a palindrome. A palindrome is the same word spelled forward or backward. Use the test variables provided.
 
